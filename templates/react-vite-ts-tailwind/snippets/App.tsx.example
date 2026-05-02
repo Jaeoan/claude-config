@@ -1,0 +1,49 @@
+import { useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div className="min-h-screen bg-linear-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center">
+      <div className="bg-white rounded-2xl shadow-2xl p-10 flex flex-col items-center gap-6 max-w-sm w-full mx-4">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-800 mb-1">✅ Tailwind 동작 확인</h1>
+          <p className="text-gray-500 text-sm">React + Vite + TypeScript + Tailwind CSS v4</p>
+          <p className="text-gray-400 text-xs mt-1">React Router DOM 설치 완료</p>
+        </div>
+
+        <div className="text-6xl font-bold text-indigo-600">{count}</div>
+
+        <div className="flex gap-3">
+          <button
+            onClick={() => setCount((c) => c - 1)}
+            className="px-6 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg font-medium transition-colors"
+          >
+            -1
+          </button>
+          <button
+            onClick={() => setCount(0)}
+            className="px-6 py-2 bg-red-100 hover:bg-red-200 text-red-600 rounded-lg font-medium transition-colors"
+          >
+            리셋
+          </button>
+          <button
+            onClick={() => setCount((c) => c + 1)}
+            className="px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg font-medium transition-colors"
+          >
+            +1
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Counter />
+    </BrowserRouter>
+  )
+}
