@@ -15,7 +15,10 @@ git clone https://github.com/Jaeoan/claude-config ~/claude-config
 ```bash
 bash ~/claude-config/setup.sh
 ```
-
+### 폴더 위치에 따라서 
+```
+setup.sh
+```
 실행하면 메뉴가 뜨고, 템플릿을 고르면 프로젝트명을 입력 받아 자동으로 셋업합니다.
 
 ```
