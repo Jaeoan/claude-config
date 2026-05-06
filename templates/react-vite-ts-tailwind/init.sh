@@ -100,8 +100,13 @@ else
 fi
 
 echo ""
-echo "[12/12] CLAUDE.md 복사 및 git 초기화..."
+echo "[12/12] CLAUDE.md · 슬래시커맨드 복사 및 git 초기화..."
 cp "$SCRIPT_DIR/CLAUDE.md" CLAUDE.md
+
+if [[ -d "$SCRIPT_DIR/commands" ]]; then
+  mkdir -p .claude/commands
+  cp "$SCRIPT_DIR/commands/"*.md .claude/commands/
+fi
 git init
 git add .
 git commit -m "feat: initial setup (React + Vite + TypeScript + Tailwind CSS v4 + React Router DOM)"
